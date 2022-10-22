@@ -1,3 +1,4 @@
 <template>
-    test gfdsagdsa
+App
+    <router-view />
 </template>
