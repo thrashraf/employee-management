@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
+<style>
+	#app {
+		width: 100%;
+		height: 100%;
+	}
+</style>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>How To Install Vue 3 in Laravel 9 with Vite</title>
+	<title>Employee Management System</title>
 
 	@vite('resources/css/app.css')
 </head>
