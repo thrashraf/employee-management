@@ -1,16 +1,7 @@
 <template>
-    <a-row>
+    <div class="container">
         <router-view />
-    </a-row>
+    </div>
 </template>
 
-<style>
-    .ant-row {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-</style>
 

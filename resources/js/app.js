@@ -4,9 +4,8 @@ import {createApp} from 'vue/dist/vue.esm-bundler.js';
 import { createStore } from 'vuex';
 import router from './router/index'
 
-import Antd from "ant-design-vue";
+import '../css/app.css'; 
 import AppComponent from './App.vue'
-import "ant-design-vue/dist/antd.css";
 
 import auth from './store/auth';
 import axios from 'axios';
@@ -28,4 +27,4 @@ const store = createStore({
     }
 })
 
-app.use(Antd).use(store).use(router).mount('#app');
+app.use(store).use(router).mount('#app');

@@ -1,44 +1,40 @@
 <template>
-  <a-row>
-    <a-form
-      name="basic"
-      autocomplete="on"
-      @finish="onFinish"
-      @finishFailed="onFinishFailed"
-    >
-    <a-form-item
-        label="name"
-        name="name"
-        :rules="[{ required: true, message: 'Please input your name!' }]"
-      >
-        <a-input v-model:value="form.name" />
-      </a-form-item>
+  <div class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+  <div class="w-full max-w-md space-y-8">
+    <div>
+      <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
+      <h2>Register an account</h2>
+     
+    </div>
+    <form class="mt-8 space-y-6">
+      <input type="hidden" name="remember" value="true">
+      <div class="-space-y-px rounded-md shadow-sm">
+        <div>
+          <label for="name" class="sr-only">name</label>
+          <input id="name" name="name" type="name" autocomplete="current-name" required class="input" placeholder="name" v-model="form.name">
+        </div>
+        <div>
+          <label for="email-address" class="sr-only">Email address</label>
+          <input id="email-address" name="email" type="email" autocomplete="email" required class="input rounded-t-none rounded-b-none" placeholder="Email address"  v-model="form.email">
+        </div>
+        <div>
+          <label for="password" class="sr-only">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required class="input rounded-t-none rounded-b-md" placeholder="Password"  v-model="form.password">
+        </div>
+      </div>
 
-      <a-form-item
-        label="Username"
-        name="email"
-        :rules="[{ required: true, message: 'Please input your username!' }]"
-      >
-        <a-input v-model:value="form.email" />
-      </a-form-item>
+      <div>
+        <button class="primary" @click.prevent="signup">
+          Sign Up
+        </button>
+      </div>
 
-      <a-form-item
-        label="Password"
-        name="password"
-        :rules="[{ required: true, message: 'Please input your password!' }]"
-      >
-        <a-input-password v-model:value="form.password" />
-      </a-form-item>
-
-      <a-form-item>
-        <p>Already have an account? <router-link to="/signIn">Login</router-link></p>
-      </a-form-item>
-
-      <a-form-item>
-        <a-button @click.prevent="login" type="primary" html-type="submit">Submit</a-button>
-      </a-form-item>
-    </a-form>
-    </a-row>
+      <div class="text-center ">
+        <p>Already have an account? <router-link to="/signIn">Sign In</router-link></p>
+      </div>
+    </form>
+  </div>
+</div>
 </template>
  
 <script>
@@ -58,7 +54,7 @@
       console.log('Failed:', errorInfo);
     };
 
-    const login = async() => {
+    const signup = async() => {
 
       console.log(form)
       axios.post('/api/register', form)
@@ -73,7 +69,7 @@
     return {
       form,
       onFinishFailed,
-      login
+      signup
     };
   },
     

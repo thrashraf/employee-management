@@ -7,7 +7,7 @@ System requirement: -
 
 Task: -
 
-1. A user can sign up or log in
+1. A user can sign up or log in [x]
 2. User can create, read, edit, delete a list of employees, departments, roles.
 3. Employee can have a profile picture, basic profile details
 4. Department can have image, name & description
